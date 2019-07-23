@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>调用变量</title>
+</head>
+<body>
+	<p>this is app/indexview/view/index/index.html</p>
+
+	<!-- 模板调用系统变量 -->
+	<h2>系统变量</h2>
+	<p>{$Think.server.HTTP_HOST}</p>
+	<P>{$Think.session.email}</P>
+	<p>{$Think.cookie.name}</p>
+	<p>{$Think.get.id}</p>
+	<p>{$Think.request.id}</p>
+	<!-- 模板调用常量 -->
+	<h2>常量</h2>
+	<p>{$Think.const.APP_PATH}</p>
+	<p>{$Think.APP_PATH}</p>
+	<!-- 模板调用变量 -->
+	<h2>变量</h2>
+	<p>{$email}</p>
+	<p>{$email|md5}</p>
+	<p>{$email|md5|strtoupper}</p>
+	<p>{$email|substr=0,8}</p>
+	<p>{$email|substr=###,0,9}</p>
+	<p>{$time}->{$time|date='Y-m-d',###}</p>
+	<p>{$password|default='1234567890'}</p>
+	<h2>运算</h2>
+	<p>a+b={$a+$b}</p>
+	<p>b-a={$b-$a}</p>
+	<p>a*b={$a*$b}</p>
+	<p>b/a={$b/$a}</p>
+	<h2>不编译</h2>
+	{literal}
+	{$email}
+	{/literal}
+	<h2>注释</h2>
+	{literal}
+	<!--这是html的注释 -->
+	{/*这是框架的注释*/}
+	{/literal}
+
+	<h2>在html上调用php</h2>
+	{literal}
+	<?php  ?>
+	{php} {/php}
+	{/literal}
+
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>循环</title>
+</head>
+<body>
+
+	<!-- volist -->
+	<h2>volist循环</h2>
+	{literal}
+	{volist name="list" id="data" offset='0' length='3' mod='2' key='i'}
+	<p>{$i}-->>{$data.name}-->>{$data.email}</p>
+	{/volist}
+	{/literal}
+
+	<!-- foreach -->
+	<h2>foreach循环</h2>
+	{literal}
+	{foreach $list as $data}
+	<p>{$data.name}-->>{$data.email}</p>
+	{/foreach}
+
+	{foreach name='list' item='data' key='s'}
+	<p>{$s}-->>{$data.name}-->>{$data.email}</p>
+	{/foreach}
+	{/literal}
+
+	<!-- for -->
+	<h2>for循环</h2>
+	{for start='1' end='3'}
+	<p>{$i}</p>
+	{/for}
+
+</body>
+</html>

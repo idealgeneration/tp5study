@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>条件判断</title>
+</head>
+<body>
+
+	{switch name='$Think.get.id'}
+	{case value='1'}<p>铜牌会员</p>{/case}
+	{case value='2'}<p>银牌会员</p>{/case}
+	{case value='3'}<p>金牌会员</p>{/case}
+	{case value='4'}<p>钻石会员</p>{/case}
+	{default/}<p>游客</p>
+	{/switch}
+
+	{range name='$Think.get.id' value='1,2,3,4' type='in'}<!--in notin between notbetween -->
+	<p>会员</p>
+	{else/}
+	<p>游客</p>
+	{/range}
+
+	{defined name='APP_PATH_NO'}
+	<p>APP_PATH_NO已定义</p>
+	{else/}
+	<p>APP_PATH_NO未定义</p>
+	{/defined}
+	<!--不建议使用，if要在controller里进行判断-->
+	{if condition="$Think.get.level==1"}
+	<p>等级为1</p>
+	{else/}
+	<p>等级不为1</p>
+	{/if}
+
+</body>
+</html>
